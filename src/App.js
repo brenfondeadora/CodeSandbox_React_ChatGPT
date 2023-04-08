@@ -8,7 +8,6 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
   background-color: #1e1e1e; /* Dark background color */
   color: #f5f5f5; /* Light text color */
   background-image: url(${backgroundImage});
@@ -18,11 +17,20 @@ const Wrapper = styled.div`
 `;
 
 const Card = styled.div`
-  width: 300px;
+  padding: 20px;
+  gap: 20px;
+  width: 360px;
+  height: 575px;
   border-radius: 5px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
   overflow: hidden;
-  background-color: #2e2e2e; /* Darker background color for the card */
+
+  background: rgba(0, 0, 0, 0.6);
+  box-shadow: 0px 30px 60px rgba(0, 0, 0, 0.1), 0px 30px 60px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  /* Note: backdrop-filter has minimal browser support */
+
+  border-radius: 10px;
 `;
 
 const Divider = styled.hr`
@@ -33,13 +41,20 @@ const Divider = styled.hr`
 
 const Subtitle = styled.h3`
   margin: 0;
-  font-size: 18px;
-  color: #999; /* Update subtitle color for dark mode */
+  font-family: "SF Pro";
+  font-style: normal;
+  font-weight: 510;
+  font-size: 15px;
+  line-height: 18px;
+  /* identical to box height */
+
+  color: rgba(255, 255, 255, 0.8);
 `;
 
 const CoverImage = styled.img`
   width: 100%;
-  height: 150px;
+  height: 320px;
+  border-radius: 10px;
   object-fit: cover;
 `;
 
@@ -49,22 +64,41 @@ const CardContent = styled.div`
 
 const Title = styled.h2`
   margin: 0;
-  font-size: 24px;
+  font-family: "SF Pro";
+  font-style: normal;
+  font-weight: 590;
+  font-size: 17px;
+  line-height: 20px;
+
+  color: #ffffff;
 `;
 
 const Text = styled.p`
-  font-size: 14px;
+  font-family: "SF Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 24px;
+  /* or 185% */
+
+  color: rgba(255, 255, 255, 0.7);
 `;
 
 const Author = styled.div`
   display: flex;
-  align-items: center;
-  margin-top: 10px;
+  font-family: "SF Pro";
+  font-style: normal;
+  font-weight: 510;
+  font-size: 13px;
+  line-height: 16px;
+  /* identical to box height */
+
+  color: rgba(255, 255, 255, 0.8);
 `;
 
 const Avatar = styled.img`
-  width: 40px;
-  height: 40px;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
   margin-right: 10px;
 `;
