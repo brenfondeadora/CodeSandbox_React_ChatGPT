@@ -8,12 +8,13 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #1e1e1e; /* Dark background color */
-  color: #f5f5f5; /* Light text color */
+  height: 100vh;
+  background-color: #2d2d2d;
   background-image: url(${backgroundImage});
-  background-size: cover;
-  background-position: center;
   background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0px;
+  padding: 0px;
 `;
 
 const Card = styled.div`
@@ -35,65 +36,55 @@ const Card = styled.div`
 
 const Divider = styled.hr`
   border: none;
-  border-top: 1px solid #444; /* Update divider color for dark mode */
-  margin: 10px 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  border-radius: 10px;
 `;
 
-const Subtitle = styled.h3`
-  margin: 0;
-  font-family: "SF Pro";
+const Subtitle = styled.h4`
   font-style: normal;
   font-weight: 510;
   font-size: 15px;
   line-height: 18px;
-  /* identical to box height */
-
+  margin: 10px 0;
   color: rgba(255, 255, 255, 0.8);
 `;
 
 const CoverImage = styled.img`
   width: 100%;
-  height: 320px;
   border-radius: 10px;
-  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 `;
 
 const CardContent = styled.div`
   padding: 20px;
 `;
 
-const Title = styled.h2`
-  margin: 0;
-  font-family: "SF Pro";
+const Title = styled.h3`
   font-style: normal;
   font-weight: 590;
   font-size: 17px;
   line-height: 20px;
-
-  color: #ffffff;
+  margin: 10px 0;
 `;
 
 const Text = styled.p`
-  font-family: "SF Pro";
   font-style: normal;
   font-weight: 400;
   font-size: 13px;
   line-height: 24px;
-  /* or 185% */
-
   color: rgba(255, 255, 255, 0.7);
 `;
 
 const Author = styled.div`
   display: flex;
-  font-family: "SF Pro";
-  font-style: normal;
-  font-weight: 510;
-  font-size: 13px;
-  line-height: 16px;
-  /* identical to box height */
-
-  color: rgba(255, 255, 255, 0.8);
+  align-items: center;
+  margin-top: 15px;
+  position: relative;
 `;
 
 const Avatar = styled.img`
@@ -104,8 +95,12 @@ const Avatar = styled.img`
 `;
 
 const AuthorName = styled.span`
-  font-size: 14px;
-  font-weight: bold;
+  font-style: normal;
+  font-weight: 510;
+  font-size: 13px;
+  line-height: 16px;
+
+  color: rgba(255, 255, 255, 0.8);
 `;
 
 function App() {
