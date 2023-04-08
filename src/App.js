@@ -18,8 +18,6 @@ const Wrapper = styled.div`
 `;
 
 const Card = styled.div`
-  padding: 20px;
-  gap: 20px;
   width: 360px;
   height: 575px;
   border-radius: 5px;
@@ -32,6 +30,7 @@ const Card = styled.div`
   /* Note: backdrop-filter has minimal browser support */
 
   border-radius: 10px;
+  padding: 20px;
 `;
 
 const Divider = styled.hr`
@@ -42,7 +41,7 @@ const Divider = styled.hr`
     rgba(255, 255, 255, 0.2) 0%,
     rgba(255, 255, 255, 0) 100%
   );
-  border-radius: 10px;
+  margin: 12px 0;
 `;
 
 const Subtitle = styled.h4`
@@ -50,29 +49,32 @@ const Subtitle = styled.h4`
   font-weight: 510;
   font-size: 15px;
   line-height: 18px;
-  margin: 10px 0;
+  margin: 0 0 8px;
   color: rgba(255, 255, 255, 0.8);
 `;
 
 const CoverImage = styled.img`
   width: 100%;
+  height: 320px;
+  object-fit: cover;
   border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
 `;
 
 const CardContent = styled.div`
-  padding: 20px;
+  padding-top: 20px;
 `;
 
-const Title = styled.h3`
+const Title = styled.h2`
+  margin: 0;
   font-style: normal;
   font-weight: 590;
-  font-size: 17px;
+  font-size: 24px;
   line-height: 20px;
-  margin: 10px 0;
+  color: #ffffff;
 `;
 
 const Text = styled.p`
+  margin: 0 0 12px;
   font-style: normal;
   font-weight: 400;
   font-size: 13px;
@@ -82,9 +84,20 @@ const Text = styled.p`
 
 const Author = styled.div`
   display: flex;
+  flex-direction: row;
   align-items: center;
-  margin-top: 15px;
-  position: relative;
+  padding: 0px;
+  gap: 8px;
+
+  width: 320px;
+  height: 24px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 5;
+  align-self: stretch;
+  flex-grow: 0;
 `;
 
 const Avatar = styled.img`
@@ -95,10 +108,12 @@ const Avatar = styled.img`
 `;
 
 const AuthorName = styled.span`
+  font-family: "SF Pro";
   font-style: normal;
   font-weight: 510;
   font-size: 13px;
   line-height: 16px;
+  /* identical to box height */
 
   color: rgba(255, 255, 255, 0.8);
 `;
@@ -109,12 +124,13 @@ function App() {
       <Card>
         <CoverImage src={coverImage} alt="Cover" />
         <CardContent>
-          <Title>Card Title</Title>
+          <Title>Build beautiful apps with GPT4 and Midjourney</Title>
           <Divider />
-          <Subtitle>Card Subtitle</Subtitle>
+          <Subtitle>40 sections - 5 hours</Subtitle>
           <Text>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut
-            imperdiet mauris.
+            Hands-on course teaching about all the techniques for turning a
+            Midjourney inspiration into a real working design with interactions
+            in Figma.
           </Text>
           <Author>
             <Avatar src={avatarImage} alt="Brenda SC" />
