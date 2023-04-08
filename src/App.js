@@ -3,6 +3,7 @@ import styled from "styled-components";
 import coverImage from "./card-image.png";
 import avatarImage from "./avatar.jpeg";
 import backgroundImage from "./card-background.jpg";
+import React, { useState, useRef } from "react";
 
 const Wrapper = styled.div`
   display: flex;
@@ -31,6 +32,9 @@ const Card = styled.div`
 
   border-radius: 10px;
   padding: 20px;
+  transform: ${(props) =>
+    `perspective(1000px) rotateX(${props.rotateX}deg) rotateY(${props.rotateY}deg) scale(${props.scale})`};
+  transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 `;
 
 const Divider = styled.hr`
@@ -119,9 +123,40 @@ const AuthorName = styled.span`
 `;
 
 function App() {
+  const [rotateX, setRotateX] = useState(0);
+  const [rotateY, setRotateY] = useState(0);
+  const [scale, setScale] = useState(1);
+  const cardRef = useRef();
+
+  const handleMouseMove = (e) => {
+    const rect = cardRef.current.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width / 2;
+    const y = e.clientY - rect.top - rect.height / 2;
+    setRotateX(-y / -20);
+    setRotateY(x / -20);
+  };
+
+  const handleMouseEnter = () => {
+    setScale(1.05);
+  };
+
+  const handleMouseLeave = () => {
+    setRotateX(0);
+    setRotateY(0);
+    setScale(1);
+  };
+
   return (
     <Wrapper>
-      <Card>
+      <Card
+        ref={cardRef}
+        rotateX={rotateX}
+        rotateY={rotateY}
+        scale={scale}
+        onMouseMove={handleMouseMove}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
         <CoverImage src={coverImage} alt="Cover" />
         <CardContent>
           <Title>Build beautiful apps with GPT4 and Midjourney</Title>
