@@ -4,7 +4,7 @@ Based on designcode course [Design and Code with ChatGPT and Midjourney](https:/
 
 <p align="center">
 <a href="#">
-<img src="images/card.png" align="center" width="40%">
+<img src="images/react_chatgpt.gif" align="center" width="100%">
 </a>  
 <br><br>
      Card in React with ChatGPT4
@@ -26,18 +26,17 @@ Based on designcode course [Design and Code with ChatGPT and Midjourney](https:/
 
 <p align="center">
 <a href="https://react.dev/">
-  <img src="images/react.png" align="center" width="20%" >
-</a> 
-
+  <img src="images/react.png" align="center" width="10%" >
+</a>
 <a href="https://chat.openai.com/chat?model=gpt-4">
-  <img src="images/chatgpt4.png" align="center" width="20%" >
+  <img src="images/chatgpt4.png" align="center" width="10%" >
 </a> 
 </p>
 
 ## 🤖 Requirements
 
 - Have an account plus on [chatgpt](https://chat.openai.com/) to use chatgpt4
-- Have an account on [codesamplebox](https://codesandbox.io/) to use codesample 
+- Have an account on [codesamplebox](https://codesandbox.io/) to use codesample
 
 ## 👤 Author
 
